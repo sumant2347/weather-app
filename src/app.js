@@ -2,6 +2,8 @@ const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
 const app = express();
+const port = process.env.PORT || 30002;
+
 const { fetchWheather } = require("./utils/weather");
 const { fetchGeoLocation } = require("./utils/geocode");
 // Define paths for Express config
@@ -66,6 +68,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3002, () => {
+app.listen(port, () => {
   console.log("Server is up on port 3002.");
 });
